@@ -1,0 +1,307 @@
+.mood-diary-page {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .page-header {
+    text-align: center;
+    max-width: 700px;
+    max-height: 70px;
+    margin: 0 auto;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+    color: #0077b6;
+    margin: 0;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    font-family: 'Comfortaa';
+  }
+  
+
+.mood-diary-container {
+    display: flex;
+    height: 50vh;
+    margin: 20px;
+    padding: 0.5rem;
+    gap: 1rem;
+    background-color: #D58A9F;
+    border-radius: 20px;
+    border-color: #ffffff;
+    border-style: solid;
+    color: #24576B;
+  }
+  
+  .calendar-section {
+    flex: 1;
+    border-radius: 16px;
+  }
+  
+  .calendar {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  }
+  
+  .calendar::before,
+  .calendar::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 12px;
+    height: 97%;
+    border-radius: 0 5px 5px 0;
+    background-color: #d3d4d6d7;
+    transform: translateY(-50%);
+  }
+  .calendar::before {
+    height: 94%;
+    left: calc(100% + 12px);
+    background-color: rgb(153, 153, 153);
+  }
+  
+  .calendar .month {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #373c4f;
+  }
+  
+  .calendar .month i {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #373c4f;
+  }
+  
+  .weekdays {
+    display: grid;
+    width: 100%; /* Для того, щоб контейнер займав 100% ширини */
+    max-width: 320px; /* Можна встановити максимальну ширину контейнера */
+    margin: 0 auto; /* Для центрування контейнера */
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    text-align: center;
+    color: #6c6c6c;
+    background-color: #ffffff00;
+  }
+  
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Кількість колонок — 7 для кожного дня тижня */
+    gap: 0.5rem;
+    text-align: center;
+    width: 100%; /* Для того, щоб контейнер займав 100% ширини */
+    max-width: 320px; /* Можна встановити максимальну ширину контейнера */
+    margin: 0 auto; /* Для центрування контейнера */
+  }
+  
+  .day-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black; /* Чорна рамка */
+    border-radius: 0; /* Без округлених кутів */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    aspect-ratio: 1; /* Встановлюємо співвідношення сторін 1:1, щоб клітинка була квадратною */
+  }
+  
+  .day-cell:hover {
+    background-color: #d4d0f1;
+    color: #000;
+  }
+  
+  .day-cell.empty {
+    background-color: transparent;
+    cursor: default;
+  }
+
+  .day-cell.empty {
+    background-color: transparent;
+    cursor: default;
+  }
+  
+  .day-cell.selected {
+    background-color: #d4d0f1;
+    color: #000;
+  }
+  
+  .day-cell.today {
+    background-color: #ffdd57; /* Підсвітлення для сьогоднішнього дня */
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .day-cell:hover {
+    background-color: #d4d0f1;
+    color: #000;
+  }
+
+  /* Стилі для кнопок перемикання місяців */
+/* Оновіть ці стилі у вашому MoodDiary.css */
+
+  
+  .date {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0.5rem; /* Зменшили відступи з боків */
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #0077b6;
+    padding: 0.3rem; /* Зменшили внутрішні відступи */
+    transition: all 0.2s;
+    user-select: none;
+    margin: 0; /* Видалили зовнішні відступи */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: #f0f4f8;
+    border-radius: 50%;
+  }
+
+  
+  
+
+
+
+
+  
+  .entry-section {
+    flex: 1;
+    background: #f7f9fc;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    max-height: 450px;
+    overflow-y: auto;
+  }
+  
+  .entry-section h2 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .mood-picker p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: #555;
+  }
+  
+  .emoji-list {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .emoji-list button {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 8px;
+    padding: 0.3rem;
+  }
+  
+  .emoji-list button:hover {
+    transform: scale(1.2);
+    background-color: #e0f7fa;
+  }
+  
+  .entry-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: #ffffff00;
+  }
+  
+  .comment-label {
+    display: block;
+  }
+  
+  .entry-inputs textarea {
+    width: 90%;
+    height: 70px;
+    border-radius: 10px;
+    padding: 0.4rem;
+    border: 3px solid #3aa8e4;
+    resize: none;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fff;
+    box-shadow: inset 0 2px 4px rgba(69, 174, 222, 0.02);
+    transition: border-color 0.2s;
+    background-color: #ffffff;
+  }
+  
+  .entry-inputs textarea:focus {
+    outline: none;
+    border-color: #0077b6;
+  }
+  
+  .good-bad-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .good-bad-wrapper label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .save-button {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.6rem 1.4rem;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #005f87;
+  }
+  

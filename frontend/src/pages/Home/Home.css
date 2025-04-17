@@ -1,0 +1,275 @@
+/* src/pages/Home/Home.css */
+.home-snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 71vh;
+  }
+  
+  .snap-section {
+    scroll-snap-align: start;
+    height: 55vh;       /* однакова для всіх */
+    min-height: 55.8vh;
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffae74;
+    text-align: center;
+  }  
+  
+  .snap-section:nth-child(even) {
+    background: #ffffff00;
+  }
+  
+
+  
+  
+  
+
+  .hero {
+    color: #24576B;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .hero-container {
+    display: flex;
+
+    width: 100%;
+    max-width: 1300px;
+  }
+  
+  .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-family: 'Comfortaa';
+  }
+  
+  .highlight {
+    font-weight: 800;
+    color: #FFFCEE;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .subtitle {
+    font-size: 3rem;
+    color: #333;
+
+    max-width: 600px;
+    font-family: 'Forum';
+  }
+  
+  .psychologist-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
+  
+  .cta-button {
+    background-color: #24576B;
+    color: #FFFCEE;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+  
+  .cta-button:hover {
+    background-color: #6596d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+  }
+  
+  .snap-section h1, .snap-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .snap-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #333;
+  }
+  
+  .snap-section button {
+    margin-top: 2rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #24576B;
+    border: none;
+    border-radius: 12px;
+    color: #FFFCEE;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .snap-section button:hover {
+    background-color: #D7E8E8;
+    color: #24576B;
+  }
+  
+  /* приховати scrollbar, якщо хочеш */
+  .home-snap-container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+  .snap-section.module-section {
+    justify-content: flex-start;
+    align-items: center;
+    border-color: #D58A9F;
+    border-style: solid;
+  } 
+  
+  .module-section {
+    position: relative; /* додай це */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden; /* щоб нічого не вилазило за межі */
+  }
+
+  .module-grid {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .module-card {
+    background-color: #D7E8E8;
+    border-radius: 20px;
+    border-color: #ffffff;
+    border-style: solid;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 0.6rem;
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .module-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 119, 182, 0.2);
+  }
+  
+  .module-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+    color: #0077b6;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .module-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 1rem;
+    font-family: 'Forum';
+  }
+  
+  .module-card img {
+    width: 100%;
+    max-height: 160px;
+    object-fit: contain;
+  }
+  
+  .snap-section.module-section p {
+    font-family: 'Forum';
+  }
+
+
+
+
+
+
+
+  /* Адаптивність */
+@media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      padding: 2rem;
+    }
+    
+    .hero-text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .psychologist-img {
+      max-height: 50vh;
+    }
+  }
+  
+
+/* базовий стиль */
+.splatter {
+    position: absolute;
+    width: 1050px; /* або менше/більше, як тобі подобається */
+    opacity: 1; /* можна налаштувати */
+    z-index: 0; /* щоб було позаду всього */
+    pointer-events: none; /* щоб не заважали клікам */
+  }
+  
+  /* конкретне розміщення */
+  .top-left {
+    top: 10px;
+    left: -300px;
+    transform: rotate(110deg);
+  }
+  
+  .bottom-right {
+    bottom: -150px;
+    right: -230px;
+    transform: rotate(180deg);
+  }
+  

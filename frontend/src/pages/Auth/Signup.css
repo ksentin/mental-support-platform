@@ -1,0 +1,125 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 71vh;
+  }
+  
+  .signup-content {
+    display: flex;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 960px;
+    width: 100%;
+    overflow: hidden;
+    border-color: #D58A9F;
+    border-style: solid;
+  }
+  
+  .signup-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e5f4ff;
+    padding: 1rem;
+  }
+  
+  .signup-image img {
+    width: 100%;
+    max-width: 360px;
+  }
+  
+  .signup-form {
+    flex: 2;
+    background-color: #f7fcf8;
+  }
+  
+  .signup-form h2 {
+    text-align: center;
+    color: #1a1a1a;
+    font-size:larger;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    flex: 1 1 100%;
+  }
+  
+  .signup-form label {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .signup-form input:not([type="checkbox"]),
+  .signup-form select {
+    margin-left: 1rem;
+    padding: 0.75rem;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    background-color: #fff;
+  }  
+  
+  .checkbox {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin: 1rem 0;
+    padding-left: 1rem; /* Якщо треба трохи відступу – сюди */
+  }
+  
+  .checkbox input {
+    margin-right: 10px;
+    margin-top: 3px;
+    width: auto;
+  }
+  
+  .checkbox p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    flex: 1;
+  }
+  
+  
+  .signup-form button {
+    width: 50%;
+    padding: 0.75rem;
+    background: #49abe7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block; /* Додано */
+    margin: 1rem auto 0 auto; /* Центрування */
+  }
+  
+  
+  .signup-form button:hover {
+    background: #5594b8;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  

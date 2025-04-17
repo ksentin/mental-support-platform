@@ -1,0 +1,232 @@
+.articles-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .articles-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+  }
+
+  
+  
+  .book {
+    flex: 1; /* Початкове співвідношення 1:2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    transition: flex 0.5s ease-in-out;
+  }
+
+  .articles-container:hover .book {
+    flex: 2; /* Змінюємо на 1:1 при наведенні */
+  }
+  
+  .book-inner {
+    height: 320px;
+    width: 280px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    backface-visibility: visible;
+  }
+  
+  
+  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 280px;
+    height: 100%;
+    top: 0; left: 0;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+    border-radius: .5em;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .front, .back {
+    background: #a0c4ff;
+  }
+  
+  .page1 { background: #fff0f6; }
+  .page2 { background: #ffe5ec; }
+  .page3 { background: #fcd5ce; }
+  .page4 { background: #e2ece9; }
+  .page5 { background: #d8e2dc; }
+  .page6 { background: #fafafa; }
+  
+  .book:hover .front { transform: rotateY(-160deg) scale(1.1); }
+  .book:hover .page1 { transform: rotateY(-150deg) scale(1.1); }
+  .book:hover .page2 { transform: rotateY(-30deg) scale(1.1); }
+  .book:hover .page3 { transform: rotateY(-140deg) scale(1.1); }
+  .book:hover .page4 { transform: rotateY(-40deg) scale(1.1); }
+  .book:hover .page5 { transform: rotateY(-130deg) scale(1.1); }
+  .book:hover .page6 { transform: rotateY(-50deg) scale(1.1); }
+  .book:hover .back { transform: rotateY(-20deg) scale(1.1); }
+  
+  .page-content {
+    padding: 2rem;
+    font-family: 'Caveat';
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .front {
+    background: linear-gradient(135deg, #a0c4ff, #bde0fe);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .cover-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  .cover-title p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+
+
+
+
+  .page-header {
+    flex: 2; /* Початкове співвідношення 2:1 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    transition: flex 0.5s ease-in-out;
+  }
+
+  .page-header.hovered {
+    flex: 1; /* Змінюємо на 1:1 при наведенні */
+  }
+  
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #333;
+    margin: 0;
+    transition: transform 0.8s ease;
+  }
+  
+  .page-description {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #555;
+    max-width: 600px;
+    transition: transform 0.8s ease;
+    margin-top: 0.5rem;
+  }
+  
+  
+
+
+
+  .articles-section {
+    width: 100%;
+  }
+  
+  .articles-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .article-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 0.6rem;
+  }
+  
+  .card-description {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: #555;
+    flex-grow: 1;
+  }
+  
+  .read-more-btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+    background-color: #f783ac;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .read-more-btn:hover {
+    background-color: #e64980;
+  }
+  

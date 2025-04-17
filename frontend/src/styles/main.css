@@ -1,0 +1,36 @@
+/* src/styles/main.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Додаємо явну ширину */
+
+    font-family: Arial, sans-serif;
+    background-color: #FFFCEE;
+  }
+  
+  #root {
+    width: 100%; /* Розтягуємо на всю ширину */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app {
+    width: 100%; /* Розтягуємо на всю ширину */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    width: 100%; /* Головний контент на всю ширину */
+    flex: 1;
+    box-sizing: border-box; /* Щоб padding не додавався до ширини */
+  }
+  
+  /* Для головної сторінки (Home.jsx) */
+  .home-container {
+    width: 100%;
+    max-width: 1200px; /* Обмеження максимальної ширини (опційно) */
+    margin: 0 auto; /* Вирівнювання по центру */
+    padding: 0 1rem; /* Відступи по боках на малих екранах */
+  }
