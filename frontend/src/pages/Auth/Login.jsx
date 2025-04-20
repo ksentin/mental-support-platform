@@ -1,16 +1,39 @@
 // src/pages/Auth/Login.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useAuth } from '../../context/AuthContext';
 import './Login.css';
 import loginImage from '../../assets/images/login.svg';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login data:', { email, password });
+
+    try {
+      const response = await axios.post('http://localhost:8000/api/auth/login/', {
+        username: email,
+        password: password
+      });
+
+      const { access, refresh } = response.data;
+
+      // Зберігаємо токени та оновлюємо глобальний стан авторизації
+      localStorage.setItem('accessToken', access);
+      localStorage.setItem('refreshToken', refresh);
+      login(access); // оновлюємо стан авторизації через контекст
+
+      navigate('/');
+    } catch (error) {
+      console.error('Помилка логіну:', error);
+      alert('Невірний email або пароль');
+    }
   };
 
   return (

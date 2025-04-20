@@ -1,14 +1,22 @@
 // src/components/Header/Header.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
-import menuBackground from '../../assets/images/header-menu-background.svg';
-import { FiSearch, FiUser } from 'react-icons/fi'; // Іконки з react-icons
+import { FiSearch, FiUser } from 'react-icons/fi'; 
+import { useAuth } from '../../context/AuthContext';
 import './Header.css';
 
 const Header = () => {
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
+  const { isAuthenticated, user, logout } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); // Викликаємо logout з контексту
+    navigate('/login');
+  };
 
   const toggleSearch = () => {
     setSearchOpen(!searchOpen);
@@ -52,10 +60,22 @@ const Header = () => {
             </button>
           </div>
           
-          <Link to="/login" className="auth-button">
-            <FiUser className="icon" />
-            <span>Увійти</span>
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <Link to="/profile" className="auth-button">
+                <FiUser className="icon" />
+                <span>Профіль</span>
+              </Link>
+              <button onClick={handleLogout} className="auth-button">
+                Вийти
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="auth-button">
+              <FiUser className="icon" />
+              <span>Увійти</span>
+            </Link>
+          )}
         </div>
       </nav>
 

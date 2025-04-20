@@ -8,6 +8,7 @@ import MoodDiary from './pages/MoodDiary/MoodDiary';
 import UsefulArticles from './pages/UsefulArticles/UsefulArticles';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
+import ProtectedRoute from './components/ProtectedRoute';
 import './styles/main.css';
 
 function App() {
@@ -19,10 +20,19 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mood" element={<MoodDiary />} /> {/* 👈 новий маршрут */}
-            <Route path="/articles" element={<UsefulArticles />} /> {/* 👈 новий маршрут */}
+            <Route path="/mood" element={<MoodDiary />} /> 
+            <Route path="/articles" element={<UsefulArticles />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+
+            <Route
+              path="/mood"
+              element={
+                <ProtectedRoute>
+                  <MoodDiary />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         

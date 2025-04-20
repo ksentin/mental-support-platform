@@ -2,13 +2,13 @@
 .home-snap-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 71vh;
+    height: 74vh;
   }
   
   .snap-section {
     scroll-snap-align: start;
-    height: 55vh;       /* однакова для всіх */
-    min-height: 55.8vh;
+    height: 57vh;       /* однакова для всіх */
+    min-height: 60.3vh;
     padding: 3.2rem;
     display: flex;
     flex-direction: column;
