@@ -19,21 +19,21 @@ class RegisterSerializer(serializers.ModelSerializer):
         age = validated_data.pop('age')
         gender = validated_data.pop('gender')
 
-        # Створення користувача
+        # створення користувача
         user = User.objects.create_user(
             username=validated_data['username'],
             email=validated_data.get('email'),
             password=validated_data['password']
         )
-        print(f"User created: {user.username}")  # Лог для перевірки
+        print(f"User created: {user.username}")
 
-        # Створення або оновлення профілю
+        # створення або оновлення профілю
         profile, created = Profile.objects.update_or_create(user=user, defaults={
             'name': name,
             'age': age,
             'gender': gender
         })
-        print(f"Profile created: {created}")  # Лог для перевірки
+        print(f"Profile created: {created}")
         return user
 
 

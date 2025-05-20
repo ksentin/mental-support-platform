@@ -35,6 +35,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = []
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Application definition
 
@@ -48,7 +50,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'django_ckeditor_5',
     'users.apps.UsersConfig',
+    'mood',
+    'articles',
+    'chatbot',
+    'meditations',
 ]
 
 REST_FRAMEWORK = {
@@ -58,8 +65,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
 }
 
 MIDDLEWARE = [
@@ -148,3 +155,14 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins': 'stylescombo,justify',
+        'format_tags': 'p;h1;h2;h3;pre',
+        'toolbar': 'Basic',
+        'forcePasteAsPlainText': True,
+        'removeFormatAttributes': True,
+        'enterMode': 1,  # 1 = <p>, 2 = <br>, 3 = <div>
+    }
+}
