@@ -36,5 +36,24 @@ class RegisterSerializer(serializers.ModelSerializer):
         print(f"Profile created: {created}")
         return user
 
+class UserProfileSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(source='user.email')
+    username = serializers.CharField(source='user.username', read_only=True)
 
+    class Meta:
+        model = Profile
+        fields = ['username', 'email', 'name', 'age', 'gender']
 
+    def update(self, instance, validated_data):
+        user_data = validated_data.pop('user', {})
+        email = user_data.get('email')
+
+        if email:
+            instance.user.email = email
+            instance.user.save()
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        return instance

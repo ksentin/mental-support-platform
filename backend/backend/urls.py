@@ -16,6 +16,9 @@ urlpatterns = [
     # додатки
     path('api/auth/', include('users.urls')),
     path('api/mood/', include('mood.urls')),
+    path("api/", include("chatbot.urls")),
+    path('api/', include('meditations.urls')),
+    path('api/', include('search.urls')),
     path('api/articles/', include('articles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

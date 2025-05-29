@@ -51,10 +51,12 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'django_ckeditor_5',
+    'django_filters',
     'users.apps.UsersConfig',
     'mood',
     'articles',
     'chatbot',
+    'search',
     'meditations',
 ]
 
@@ -62,6 +64,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
+    ],
 }
 
 SIMPLE_JWT = {
@@ -166,3 +173,12 @@ CKEDITOR_CONFIGS = {
         'enterMode': 1,  # 1 = <p>, 2 = <br>, 3 = <div>
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
