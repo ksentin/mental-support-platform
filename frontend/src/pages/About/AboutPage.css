@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Segoe+UI&display=swap');
+
+.about-page {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 81vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+}
+
+/* Основна секція */
+.about-section {
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80.5vh;
+  background: #f5f7fa;
+  transition: background 0.5s ease-in-out;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Альтернативне фонове оформлення */
+.about-section.alt {
+  background: #e0f0ff;
+  height: 81vh;
+}
+
+/* Фінальна секція */
+.about-section.end {
+  background: #dfefff;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-section h1,
+.about-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about-section p span {
+  color: #145393;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 640px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* Адаптація зображень */
+.about-section img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+}
+
+/* Лого менше */
+.about-logo {
+  width: 90px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Анімації */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
+  .about-page {
+    height: 77.15vh;
+  }
+  
+  /* Основна секція */
+  .about-section {
+    height: 76.7vh;
+  }
+}
+
+@media (max-height: 790px) {
+  .about-page {
+    height: 74.1vh;
+  }
+  
+  /* Основна секція */
+  .about-section {
+    height: 74vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .about-section img {
+    max-width: 280px;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+}

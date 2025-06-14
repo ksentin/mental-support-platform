@@ -1,6 +1,7 @@
 // src/components/Header/Header.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import logo from '../../assets/images/logo.svg';
 import { FiSearch, FiUser } from 'react-icons/fi'; 
 import { useAuth } from '../../context/AuthContext';
@@ -10,20 +11,58 @@ const Header = () => {
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
   const { isAuthenticated, user, logout } = useAuth();
+  const [suggestions, setSuggestions] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchSuggestions = async () => {
+      const query = searchQuery.trim();
+      if (query.length < 2) {
+        setSuggestions([]);
+        return;
+      }
+  
+      try {
+        const res = await axios.get(`http://localhost:8000/api/search/?q=${query}`);
+        const allSuggestions = Object.entries(res.data).flatMap(([type, items]) =>
+          items.map((item) => ({
+            id: item.id,
+            title: item.title,
+            type,
+          }))
+        );
+        setSuggestions(allSuggestions.slice(0, 5)); // максимум 5 підказок
+      } catch (error) {
+        console.error('Помилка підказок:', error);
+      }
+    };
+  
+    const delayDebounce = setTimeout(() => {
+      fetchSuggestions();
+    }, 300); // debounce 300мс
+  
+    return () => clearTimeout(delayDebounce);
+  }, [searchQuery]);
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout(); // Викликаємо logout з контексту
+    logout();
     navigate('/login');
   };
 
-  const toggleSearch = () => {
-    setSearchOpen(!searchOpen);
-    if (searchOpen) {
+  const handleSearchClick = () => {
+    if (!searchOpen) {
+      setSearchOpen(true); // Відкрити пошук
+    } else if (searchOpen && searchQuery.trim() !== '') {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchOpen(false); // Закрити поле після пошуку
+      setSearchQuery('');
+    } else {
+      // Поле відкрите, але порожнє — закриваємо
+      setSearchOpen(false);
       setSearchQuery('');
     }
-  };
+  };  
 
   return (
     <header className="header">
@@ -37,8 +76,8 @@ const Header = () => {
 
         {/* Головне меню */}
         <div className="main-menu">
-          <Link to="/" className="menu-link">Головна</Link>
-          <Link to="/services" className="menu-link">Сервіси</Link>
+        <Link to="/#hero" className="menu-link">Головна</Link>
+          <Link to="/#navigatemenu" className="menu-link">Сервіси</Link>
           <Link to="/about" className="menu-link">Про нас</Link>
           <Link to="/contacts" className="menu-link">Контакти</Link>
         </div>
@@ -46,18 +85,49 @@ const Header = () => {
         {/* Пошук та профіль */}
         <div className="user-actions">
           <div className={`search-container ${searchOpen ? 'active' : ''}`}>
-            {searchOpen && (
+          {searchOpen && (
+            <>
               <input
                 type="text"
                 placeholder="Пошук..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && searchQuery.trim() !== '') {
+                    navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                    setSearchOpen(false);
+                    setSearchQuery('');
+                    setSuggestions([]);
+                  }
+                }}                
                 className="search-input"
               />
-            )}
-            <button onClick={toggleSearch} className="search-button">
+
+              {suggestions.length > 0 && (
+                <ul className="suggestions-list">
+                  {suggestions.map((s, index) => (
+                    <li
+                      key={index}
+                      onClick={() => {
+                        navigate(`/search?q=${encodeURIComponent(s.title)}`);
+                        setSearchOpen(false);
+                        setSearchQuery('');
+                        setSuggestions([]);
+                      }}
+                      className="suggestion-item"
+                    >
+                      {s.title} <span className="type-label">({s.type})</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
+          )}
+
+            <button onClick={handleSearchClick} className="search-button">
               <FiSearch className="icon" />
             </button>
+
           </div>
           
           {isAuthenticated ? (
@@ -83,7 +153,7 @@ const Header = () => {
       <div className="wave-divider">
         <svg viewBox="20 70 1420 210" preserveAspectRatio="none">
             <path
-            fill="#C6DA83"
+            fill="#b2cb3e"
             fillOpacity="1"
             stroke="#FFFFFF"
             strokeWidth="5"

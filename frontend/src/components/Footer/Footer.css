@@ -1,61 +1,116 @@
 .footer {
-    background-color: #24576B;
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
-    color: #ffffff;
-    border-top: 1px solid #ddd;
-  }
-  
+  background-color: #24576B;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  position: sticky;
+  border-top: 1px solid #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.footer-left p {
+  margin: 0.2rem 0 0;
+  color: #ffffff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #a5d8ff;
+  text-decoration: underline;
+}
+
+.footer-contact p {
+  margin: 0.2rem 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* ====== Планшети (до 900px) ====== */
+@media (max-width: 900px) {
   .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: center;
   }
-  
+
   .footer-left h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1.1rem;
   }
-  
+
   .footer-left p {
-    margin: 0.2rem 0 0;
-    color: #ffffff;
+    font-size: 0.9rem;
   }
-  
+
   .footer-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.5rem 0;
+    gap: 1.5rem;
   }
-  
+
   .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
   }
-  
-  .footer-links a:hover {
-    color: #a7c2ee;
-  }
-  
+
   .footer-contact p {
-    margin: 0.2rem 0;
-    color: #ffffff;
+    font-size: 0.85rem;
   }
-  
-  @media (max-width: 600px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-links {
-      justify-content: center;
-      margin: 0.5rem 0;
-    }
+}
+
+/* ====== Телефони (до 600px) ====== */
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.2rem 1rem;
+    font-size: 0.8rem;
+    position: relative;
   }
-  
+
+  .footer-left h3 {
+    font-size: 1rem;
+  }
+
+  .footer-left p {
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact {
+    display: none; /* приховано */
+  }
+}

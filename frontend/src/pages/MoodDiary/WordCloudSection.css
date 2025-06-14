@@ -1,0 +1,46 @@
+.word-cloud-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #FFFCEE;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .word-cloud-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #307C99;
+    font-size: 1.3rem;
+    font-family: 'Comforta'
+  }
+  
+  .word-cloud {
+    text-align: center;
+    line-height: 2;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .word-cloud-item {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin: 4px 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .word-cloud-item:hover {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+    border-radius: 40px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

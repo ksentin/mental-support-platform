@@ -1,0 +1,99 @@
+/* src/pages/Meditations/MeditationPreview.css */
+.meditation-preview {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: #f3f6f97e;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .meditation-text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+  }
+  
+  .meditation-text h3 {
+    font-size: 1.8rem;
+    color: #444;
+  }
+  
+  .meditation-text blockquote {
+    font-style: italic;
+    color: #666;
+    margin: 1rem 0;
+    border-left: 3px solid #ccc;
+    padding-left: 1rem;
+  }
+  
+  .go-to-meditations-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    background-color: #7ab0a2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .go-to-meditations-btn:hover {
+    background-color: #5e9489;
+  }
+  
+  .meditation-animation {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Планшети (до 1024px) */
+
+
+/* Телефони (до 600px) */
+@media (max-width: 600px) {
+
+  .meditation-text {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .meditation-text h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  .meditation-text blockquote {
+    font-size: 0.95rem;
+    padding-left: 0.8rem;
+    border-left-width: 2px;
+    margin: 0.8rem 0;
+  }
+
+  .go-to-meditations-btn {
+    width: 60%;
+    font-size: 1rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .meditation-animation {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .meditation-animation canvas,
+  .meditation-animation img,
+  .meditation-animation video {
+    max-width: 70%;
+    height: auto;
+  }
+}

@@ -1,0 +1,163 @@
+.book {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    transition: flex 0.5s ease-in-out;
+  }
+
+  .book-inner {
+    height: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    backface-visibility: visible;
+  }
+
+  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 270px;
+    height: 100%;
+    top: 0; left: 0;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+    border-radius: .5em;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .front {
+    background: linear-gradient(135deg, #a0c4ff, #bde0fe);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .front, .back {
+    background: #a0c4ff;
+  }
+  
+  .page1 { background: #fff0f6; }
+  .page2 { background: #ffe5ec; }
+  .page3 { background: #fcd5ce; }
+  .page4 { background: #e2ece9; }
+  .page5 { background: #d8e2dc; }
+  .page6 { background: #fafafa; }
+  
+  .book.open .front { transform: rotateY(-160deg); }
+  .book.open .page1 { transform: rotateY(-150deg); }
+  .book.open .page2 { transform: rotateY(-30deg); }
+  .book.open .page3 { transform: rotateY(-140deg); }
+  .book.open .page4 { transform: rotateY(-40deg); }
+  .book.open .page5 { transform: rotateY(-130deg); }
+  .book.open .page6 { transform: rotateY(-50deg); }
+  .book.open .back  { transform: rotateY(-20deg); }
+
+  .page-content {
+    padding: 2rem;
+    font-family: 'Caveat';
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .front {
+    background: linear-gradient(135deg, #a0c4ff, #bde0fe);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .cover-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  .cover-title p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+  .moodcalendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    padding: 1rem;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+  }
+  
+  .moodcalendar-cell {
+    background-color: #ffffffd0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .page5 .moodcalendar {
+    transform: rotateY(180deg);
+  }
+  
+  
+/* На планшетах */
+@media (max-width: 900px) {
+  .book-inner {
+    height: 250px;
+    margin-left: 20px;
+  }
+
+  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+    width: 220px;
+  }
+
+  .page-content {
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .cover-title h1 {
+    font-size: 1rem;
+  }
+
+  .cover-title p {
+    font-size: 1rem;
+  }
+}
+
+/* На телефонах */
+@media (max-width: 600px) {
+  .book-inner {
+    height: 200px;
+  }
+
+  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+    width: 180px;
+  }
+
+  .moodcalendar-cell {
+    height: 30px;
+    margin-bottom: 0rem;
+  }
+
+}

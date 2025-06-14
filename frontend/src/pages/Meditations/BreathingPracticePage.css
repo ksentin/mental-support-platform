@@ -1,0 +1,71 @@
+.title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #24576B;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  /* Опис практики */
+  .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
+  
+  /* Інструкція */
+  .instructions h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    color: #34495e;
+  }
+  
+  .instructions p {
+    font-size: 0.7rem;
+    color: #333;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    padding: 0 1rem;
+  }
+  
+  /* Загальна рамка */
+  .breathing-frame {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #facdea;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Загальний контейнер сторінки */
+  .breathing-practice-page {
+    min-height: 67vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.7rem 1rem;
+    background-color: #f9f9f9;
+  }
+  
+
+  .instruction-columns {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 0rem;
+    flex-wrap: wrap;
+  }
+  
+  .instruction-columns .column {
+    flex: 1 1 45%;
+  }
+  
+  .instruction-columns p {
+    margin-bottom: 0rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  

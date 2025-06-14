@@ -1,0 +1,64 @@
+.meditation-list-page {
+    min-height: 80vh; /* 100% висоти вікна */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 0rem;
+    margin-top: 0px;
+    box-sizing: border-box;
+  }
+  
+  .meditation-list-page h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #24576B;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    min-width: 200px; /* додано */
+    flex: 1 1 220px;   /* адаптивна ширина */
+    max-width: 250px; /* обмеження максимальної ширини */
+    box-sizing: border-box;
+  }
+  
+  .filters button {
+    padding: 0.6rem 1.2rem;
+    background: #24576B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+    min-width: 150px; /* щоб кнопка не була вузькою */
+  }
+  
+  .filters input:focus,
+  .filters select:focus {
+    outline: none;
+    border-color: #5b7fff;
+    box-shadow: 0 0 4px rgba(91, 127, 255, 0.5);
+  }
+  
+
+.meditation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}

@@ -1,0 +1,99 @@
+.user-profile {
+    max-width: 1000px;
+    width: fit-content;
+    margin: 9.98rem auto;
+    padding: 0.9rem;
+    font-family: 'Comfortaa';
+    border-radius: 12px;
+    background-color: #cccccc68;
+    color: #24576B;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Great Vibes", cursive;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  
+  .profile-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 0rem;
+  }
+
+  .profile-container,
+  .change-password {
+    height: fit-content;
+  }
+  
+  .change-password h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .profile-info,
+  .change-password {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .profile-info form,
+.change-password form {
+  display: flex;
+  flex-direction: column;
+}
+  
+  .user-profile label {
+    margin-top: 0.7rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .user-profile input,
+  .user-profile select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Forum';
+  }
+  
+/* Кнопки — центровані всередині форм */
+.user-profile button {
+    margin-top: 1.5rem;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #24576B;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-profile button:hover {
+    background-color: #0056b3;
+  }
+  
+  .message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  

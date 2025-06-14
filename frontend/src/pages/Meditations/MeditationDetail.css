@@ -1,0 +1,74 @@
+.meditation-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #ffffff, #e0f2f1);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .meditation-detail h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 0px;
+    color: #4875a2;
+    text-align: center;
+  }
+  
+  .meditation-detail .description {
+    font-size: 1.1rem;
+    margin-bottom: 0rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .meditation-detail .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+  }
+  
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    color: #666;
+    font-style: italic;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+.contacts-page {
+  height: 79.1vh;
+  overflow-y: auto;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7fbff;
+  padding: 20px 20px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contacts-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contacts-text {
+  max-width: 600px;
+}
+
+.contacts-text h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.contacts-text p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.contacts-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contacts-box {
+  flex: 1;
+  min-width: 250px;
+  background: #eaf4ff;
+  padding: 5px 20px;
+  border-radius: 12px;
+}
+
+.contacts-box h2 {
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.contacts-box ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contacts-box li {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.contacts-box a {
+  color: #4aa3ff;
+  text-decoration: none;
+}
+
+.contacts-box a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 1440px) {
+  .contacts-page {
+    height: 74.9vh;
+  }
+}
+
+@media (max-height: 790px) {
+  .contacts-page {
+    height: 71.5vh;
+  }
+}

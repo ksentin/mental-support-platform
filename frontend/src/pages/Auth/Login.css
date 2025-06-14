@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 71vh; /* Повна висота вікна */
+    height: 81vh;
   }
 
 .auth-content {
@@ -15,7 +15,7 @@
   width: 100%;
   border-color: #D58A9F;
   border-style: solid;
-  background-color: #e5b372c3;
+  background-color: #ffa938;
 }
 
 @media (min-width: 768px) {
@@ -68,8 +68,8 @@
 .login-button {
     width: 50%;
     padding: 0.75rem;
-    margin: 1rem auto 0 auto; /* центр по горизонталі */
-    display: block; /* щоб margin auto працював */
+    margin: 1rem auto 0 auto;
+    display: block; 
     background-color: #4a6cf7;
     color: white;
     border: none;
@@ -107,4 +107,63 @@
 .auth-image img {
   width: 90%;
   max-width: 400px;
+}
+
+@media (max-width: 1440px) {
+  .auth-container {
+    height: 77.2vh;
+  }
+}
+
+@media (max-height: 790px) {
+  .auth-container {
+    height: 73.9vh;
+  }
+}
+
+/* ======= Мобільна адаптація (до 768px) ======= */
+@media (max-width: 800px) {
+  .auth-container {
+    padding: 1rem;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .auth-content {
+    flex-direction: column;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  .auth-form {
+    padding: 1rem;
+    background-color: #ffa938;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group input {
+    width: 90%;
+    padding: 0.7rem;
+  }
+
+  .login-button {
+    width: 80%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .forgot-password {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .auth-switch {
+    font-size: 0.95rem;
+  }
+
+  .auth-image {
+    display: none;
+  }
 }

@@ -37,3 +37,4 @@ Thumbs.db
 # Backend
 /media/
 /staticfiles/
+results/

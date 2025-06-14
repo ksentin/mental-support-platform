@@ -1,0 +1,38 @@
+.search-results-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 75vh;
+  }
+  
+  .search-results-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .article-card {
+    height: 750px; /* або auto + min-height, залежно від дизайну */
+  }
+  
+  .meditation-card {
+    height: 450px; /* інша висота */
+  }
+  
+  @media (max-width: 1440px) {
+    .search-results-page {
+      min-height: 70vh;
+    }
+  }
+
+  @media (max-height: 790px) {
+    .search-results-page {
+      min-height: 66vh;
+    }
+  }

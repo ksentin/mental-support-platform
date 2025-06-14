@@ -1,0 +1,123 @@
+.square-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .square {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #d0e9ff;
+  }
+  
+  .side {
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  .side .fill {
+    background-color: #00b894;
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+  
+  /* Топ: зліва направо */
+  .side.top {
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+  }
+  .side.top .fill {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    animation-name: fill-right;
+  }
+  
+  /* Право: зверху вниз */
+  .side.right {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 5px;
+  }
+  .side.right .fill {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 0%;
+    animation-name: fill-down;
+  }
+  
+  /* Низ: справа наліво */
+  .side.bottom {
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+  }
+  .side.bottom .fill {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 0%;
+    animation-name: fill-left;
+  }
+  
+  /* Ліво: знизу вгору */
+  .side.left {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+  }
+  .side.left .fill {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    animation-name: fill-up;
+  }
+  
+  /* Анімації */
+  @keyframes fill-right {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+  
+  @keyframes fill-down {
+    from { height: 0%; }
+    to { height: 100%; }
+  }
+  
+  @keyframes fill-left {
+    from { width: 0%; right: 0; }
+    to { width: 100%; right: 0; }
+  }
+  
+  @keyframes fill-up {
+    from { height: 0%; bottom: 0; }
+    to { height: 100%; bottom: 0; }
+  }
+  
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2d3436;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .square-time {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  

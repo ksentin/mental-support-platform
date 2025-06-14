@@ -19,7 +19,7 @@ const Signup = () => {
   
     try {
       const response = await axios.post('http://localhost:8000/api/auth/register/', {
-        username: email,  // username = email, щоб відповідало serializer-у
+        username: email,
         email: email,
         password: password,
         name: name,
@@ -29,7 +29,7 @@ const Signup = () => {
   
       console.log('Реєстрація успішна:', response.data);
       alert("Реєстрація успішна!");
-      navigate('/login');  // перенаправити після успіху
+      navigate('/login');
   
     } catch (error) {
       console.error('Помилка при реєстрації:', error.response?.data || error.message);
@@ -37,8 +37,6 @@ const Signup = () => {
     }
   };
   
-  
-
   return (
     <div className="signup-container">
       <div className="signup-content">

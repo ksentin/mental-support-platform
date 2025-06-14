@@ -1,0 +1,121 @@
+/* Вся сторінка */
+.breathing-practice-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .breathing-frame {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Анімаційна зона */
+  .animation-wrapper {
+    margin: 2rem 0;
+  }
+  
+  .circle-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle-animation {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #a0d8ef;
+    color: #24576B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+  }
+  
+  .circle-animation.inhale {
+    transform: scale(1.2);
+    background: #d0e9ff;
+  }
+  .circle-animation.hold {
+    transform: scale(1.0);
+    background: #fce38a;
+  }
+  .circle-animation.exhale {
+    transform: scale(0.8);
+    background: #f38181;
+  }
+  
+  .circle-animation-text {
+    font-size: 1.5rem;
+    color: #24576B;
+    font-weight: bold;
+    text-align: center;
+  }
+  .circle-animation-time {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+  .circle-animation-waves {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    animation: circle-pulse 3s infinite;
+  }
+  
+  @keyframes circle-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+  }
+  
+  
+  /* Контролери */
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .controls button {
+    background-color: #24576B;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .controls button:hover {
+    background-color: #d0e9ff;
+    color: #24576B;
+  }
+  
+  /* Інструкція */
+  .instructions {
+    text-align: left;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+  }
+  

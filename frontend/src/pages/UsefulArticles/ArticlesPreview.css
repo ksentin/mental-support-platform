@@ -1,0 +1,161 @@
+.articles-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    background-color: #D7E8E8;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .articles-preview-left {
+    flex: 1;
+  }
+  
+  .articles-preview-left h3 {
+    font-size: 2rem;
+    color: #24576B;
+    margin-bottom: 1rem;
+    font-family: 'Forum';
+  }
+  
+  .articles-preview-left p {
+    font-size: 1.3rem;
+    color: #24576B;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-family: 'Forum';
+  }
+  
+  .articles-preview-left ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+  
+  .articles-preview-left ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.7rem;
+    color: #24576B;
+    font-family: 'Forum';
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  .articles-preview-left ul li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+    top: 0.05rem;
+    font-size: 1.1rem;
+  }
+  
+  .go-to-articles-btn {
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 3rem;
+  }
+  
+  .articles-preview-right img {
+    max-width: 320px;
+    height: auto;
+  }
+  
+
+
+/* Телефони (до 600px) */
+@media (max-width: 600px) {
+  .articles-preview {
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .articles-preview-left h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .articles-preview-left p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .articles-preview-left ul {
+    text-align: center;
+    display: block;
+    padding-left: 0;
+  }
+
+  .articles-preview-left ul li {
+    font-size: 0.9rem;
+    padding-left: 8;
+    margin-bottom: 0.5rem;
+  }
+
+  .go-to-articles-btn {
+    display: block;
+    margin-left: 105px;
+    margin-right: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .articles-preview-right img {
+    width: 0px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/* Телефони (до 600px) */
+@media (max-width: 950px) {
+  .articles-preview {
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .articles-preview-left h3 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 10;
+  }
+
+  .articles-preview-left p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .articles-preview-left ul {
+    text-align: center;
+    display: block;
+    padding-left: 0;
+  }
+
+  .articles-preview-left ul li {
+    font-size: 1.2rem;
+  }
+
+  .go-to-articles-btn {
+    display: block;
+    margin-left: 105px;
+    margin-right: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .articles-preview-right img {
+    margin-top: 15 auto;
+  }
+}

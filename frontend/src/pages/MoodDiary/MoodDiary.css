@@ -1,20 +1,28 @@
-.mood-diary-page {
+  .mood-diary-page {
     display: flex;
     flex-direction: column;
+  }
 
+  .diary-section {
+    margin: 0px auto;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    width: 95%;
   }
   
   .page-header {
     text-align: center;
     max-width: 700px;
-    max-height: 70px;
-    margin: 0 auto;
+    max-height: 80px;
+    margin: 0px auto;
+    margin-bottom: 0;
+    padding: 0;
   }
   
   .page-header h1 {
     font-size: 1.5rem;
     color: #0077b6;
-    margin: 0;
+    margin: 1;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
@@ -25,12 +33,9 @@
     font-family: 'Comfortaa';
   }
   
-
-.mood-diary-container {
+  .mood-diary-container {
     display: flex;
-    height: 50vh;
-    margin: 20px;
-    padding: 0.5rem;
+    padding: 1rem;
     gap: 1rem;
     background-color: #D58A9F;
     border-radius: 20px;
@@ -47,7 +52,7 @@
   .calendar {
     position: relative;
     width: 95%;
-    height: 100%;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,7 +100,7 @@
   .weekdays {
     display: grid;
     width: 100%; /* Для того, щоб контейнер займав 100% ширини */
-    max-width: 320px; /* Можна встановити максимальну ширину контейнера */
+    max-width: 420px; /* Можна встановити максимальну ширину контейнера */
     margin: 0 auto; /* Для центрування контейнера */
     grid-template-columns: repeat(7, 1fr);
     font-weight: 600;
@@ -110,7 +115,7 @@
     gap: 0.5rem;
     text-align: center;
     width: 100%; /* Для того, щоб контейнер займав 100% ширини */
-    max-width: 320px; /* Можна встановити максимальну ширину контейнера */
+    max-width: 420px; /* Можна встановити максимальну ширину контейнера */
     margin: 0 auto; /* Для центрування контейнера */
   }
   
@@ -159,10 +164,6 @@
     color: #000;
   }
 
-  /* Стилі для кнопок перемикання місяців */
-/* Оновіть ці стилі у вашому MoodDiary.css */
-
-  
   .date {
     font-weight: 600;
     font-size: 1.2rem;
@@ -189,13 +190,7 @@
     border-radius: 50%;
   }
 
-  
-  
 
-
-
-
-  
   .entry-section {
     flex: 1;
     background: #f7f9fc;
@@ -232,7 +227,8 @@
   .emoji-list button {
     font-size: 1.8rem;
     background: none;
-    border: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
     border-radius: 8px;
@@ -242,6 +238,12 @@
   .emoji-list button:hover {
     transform: scale(1.2);
     background-color: #e0f7fa;
+  }
+
+  .emoji-list button.selected {
+    border-color: #4a90e2;
+    background-color: #e6f0fa;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.6);
   }
   
   .entry-inputs {
@@ -286,11 +288,15 @@
     flex-direction: column;
   }
   
-  .save-button {
-    margin-top: auto;
+  .edit-buttons {
+    display: flex;
+    padding: 0rem 6rem;
+  }
+  
+  .save-button, .edit-button, .cancel-button {
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 0.6rem 1.4rem;
     background-color: #0077b6;
     color: white;
     border: none;
@@ -301,7 +307,104 @@
     transition: background-color 0.3s ease;
   }
   
-  .save-button:hover {
+  .save-button:hover, .edit-button:hover, .cancel-button:hover {
     background-color: #005f87;
+  }  
+
+  .day-cell .emoji {
+    font-size: 1.2rem;
+    margin-top: 2px;
   }
   
+  .analytics-section {
+    margin: 10px auto;
+    padding: 2rem 0rem;
+    width: 95%;
+    background-color: #ffe37d;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .analytics-section:hover {
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+  }
+  
+  select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid #94B506;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Десктоп — стандартний вигляд */
+.mood-diary-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Планшети (ширина до 992px) */
+@media screen and (max-width: 992px) {
+  .mood-diary-container {
+    flex-direction: column;
+  }
+
+  .calendar-section,
+  .entry-section {
+    width: 100%;
+  }
+
+  .entry-section {
+    width: 97%;
+  }
+}
+
+/* Смартфони (ширина до 600px) */
+@media screen and (max-width: 600px) {
+  .mood-diary-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .calendar-section{
+    width: 100%;
+  }
+
+  .entry-section {
+    width: 95%;
+  }
+
+  .calendar .month .date {
+    font-size: 1rem;
+  }
+
+  .entry-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .emoji-list button {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+
+  textarea {
+    font-size: 0.5rem;
+  }
+
+  .save-button,
+  .edit-button,
+  .cancel-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mood-chart-analytics {
+    margin: 1.5rem 4rem;
+  }
+}
+

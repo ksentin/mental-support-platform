@@ -24,10 +24,10 @@ const Login = () => {
 
       const { access, refresh } = response.data;
 
-      // Зберігаємо токени та оновлюємо глобальний стан авторизації
+      // зберігаються токени та оновлюється глобальний стан авторизації
       localStorage.setItem('accessToken', access);
       localStorage.setItem('refreshToken', refresh);
-      login(access); // оновлюємо стан авторизації через контекст
+      login(access, refresh);
 
       navigate('/');
     } catch (error) {

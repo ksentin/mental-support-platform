@@ -4,6 +4,9 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import Profile
 
+from django.contrib.auth.password_validation import validate_password
+from rest_framework.validators import ValidationError
+
 class RegisterSerializer(serializers.ModelSerializer):
     name = serializers.CharField(write_only=True)
     age = serializers.IntegerField(write_only=True)
@@ -14,26 +17,29 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = ('username', 'email', 'password', 'name', 'age', 'gender')
 
+    def validate_password(self, value):
+        try:
+            validate_password(value)
+        except Exception as e:
+            raise serializers.ValidationError(e.messages)
+        return value
+
     def create(self, validated_data):
         name = validated_data.pop('name')
         age = validated_data.pop('age')
         gender = validated_data.pop('gender')
 
-        # створення користувача
         user = User.objects.create_user(
             username=validated_data['username'],
             email=validated_data.get('email'),
             password=validated_data['password']
         )
-        print(f"User created: {user.username}")
 
-        # створення або оновлення профілю
-        profile, created = Profile.objects.update_or_create(user=user, defaults={
+        Profile.objects.update_or_create(user=user, defaults={
             'name': name,
             'age': age,
             'gender': gender
         })
-        print(f"Profile created: {created}")
         return user
 
 class UserProfileSerializer(serializers.ModelSerializer):

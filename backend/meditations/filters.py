@@ -9,3 +9,4 @@ class MeditationFilter(django_filters.FilterSet):
     class Meta:
         model = Meditation
         fields = ['type', 'min_duration', 'max_duration']
+

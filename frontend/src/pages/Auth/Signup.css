@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 71vh;
+    height: 81vh;
   }
   
   .signup-content {
@@ -81,7 +81,7 @@
     align-items: flex-start;
     width: 100%;
     margin: 1rem 0;
-    padding-left: 1rem; /* Якщо треба трохи відступу – сюди */
+    padding-left: 1rem;
   }
   
   .checkbox input {
@@ -98,7 +98,6 @@
     flex: 1;
   }
   
-  
   .signup-form button {
     width: 50%;
     padding: 0.75rem;
@@ -108,10 +107,9 @@
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    display: block; /* Додано */
-    margin: 1rem auto 0 auto; /* Центрування */
+    display: block;
+    margin: 1rem auto 0 auto;
   }
-  
   
   .signup-form button:hover {
     background: #5594b8;
@@ -123,3 +121,87 @@
     font-size: 0.95rem;
   }
   
+  @media (max-width: 1440px) {
+    .signup-container {
+      height: 77.2vh;
+    }
+  }
+
+  @media (max-height: 790px) {
+    .signup-container {
+      height: 73.9vh;
+    }
+  }
+
+  /* ======= Мобільна адаптація (до 768px) ======= */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 1rem;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .signup-content {
+    flex-direction: column;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  .signup-image {
+    display: none;
+  }
+
+  .signup-form {
+    background-color: #f7fcf8;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+
+  .signup-form h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .signup-form label {
+    margin-left: 0;
+    font-size: 0.95rem;
+  }
+
+  .signup-form input:not([type="checkbox"]),
+  .signup-form select {
+    margin-left: 0;
+    width: 90%;
+    max-width: 100%;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .checkbox {
+    padding-left: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 0.85rem;
+  }
+
+  .signup-form button {
+    width: 70%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .login-link {
+    font-size: 0.9rem;
+  }
+}

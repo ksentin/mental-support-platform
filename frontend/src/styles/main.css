@@ -3,7 +3,6 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%; /* Додаємо явну ширину */
-
     font-family: Arial, sans-serif;
     background-color: #FFFCEE;
   }
@@ -27,10 +26,8 @@ body, html {
     box-sizing: border-box; /* Щоб padding не додавався до ширини */
   }
   
-  /* Для головної сторінки (Home.jsx) */
-  .home-container {
-    width: 100%;
-    max-width: 1200px; /* Обмеження максимальної ширини (опційно) */
-    margin: 0 auto; /* Вирівнювання по центру */
-    padding: 0 1rem; /* Відступи по боках на малих екранах */
+  @media (max-width: 600px) {
+    #root {
+      height: 100vh;
+    }
   }

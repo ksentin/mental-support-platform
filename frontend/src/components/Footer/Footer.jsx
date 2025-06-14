@@ -2,7 +2,9 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ hidden }) => {
+  if (hidden) return null;
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -14,7 +16,6 @@ const Footer = () => {
           <a href="/mood">Щоденник настрою</a>
           <a href="/articles">Статті</a>
           <a href="/meditations">Медитації</a>
-          <a href="/chatbot">AI-чатбот</a>
         </div>
         <div className="footer-contact">
           <p>Контакти: support@mindsupport.app</p>

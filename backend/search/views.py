@@ -25,3 +25,4 @@ class GlobalSearchView(APIView):
         }
 
         return Response(results, status=status.HTTP_200_OK)
+
