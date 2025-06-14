@@ -9,11 +9,18 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # завантаження інтентів
-with open("chatbotmodel/data/intents.json", "r", encoding="utf-8") as f:
+#with open("chatbotmodel/data/intents.json", "r", encoding="utf-8") as f:
+#    intents = json.load(f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # директорія, де лежить цей файл (chat.py)
+intents_path = os.path.join(BASE_DIR, "data", "intents.json")
+
+with open(intents_path, "r", encoding="utf-8") as f:
     intents = json.load(f)
 
 # завантаження моделі
-FILE = "chatbotmodel/bert_model.pth"
+#FILE = "chatbotmodel/bert_model.pth"
+FILE = os.path.join(BASE_DIR, "bert_model.pth")
+
 data = torch.load(FILE, map_location=torch.device('cpu'))
 
 tags = data["tags"]
