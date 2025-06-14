@@ -25,7 +25,7 @@ DAWG-Python==0.7.2
 DAWG2-Python==0.9.0
 diagrams==0.21.1
 dill==0.3.8
-dj-database-url==3.0.0
+dj-database-url==0.5.0
 Django==4.2.20
 django-ckeditor-5==0.2.18
 django-cors-headers==4.3.1
