@@ -5,6 +5,7 @@ services:
     repo: https://github.com/ksentin/mental-support-platform.git
     branch: main
     buildCommand: |
+      pip install --upgrade pip setuptools wheel
       pip install -r requirements.txt
       python -m spacy download uk_core_news_sm
       python manage.py collectstatic --noinput
