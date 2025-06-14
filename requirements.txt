@@ -1,3 +1,5 @@
+setuptools>=68.0.0
+wheel>=0.42.0
 accelerate==1.0.1
 aiohappyeyeballs==2.4.4
 aiohttp==3.10.11
